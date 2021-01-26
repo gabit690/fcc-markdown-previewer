@@ -7,9 +7,27 @@ import './App.css';
 import Editor from './Editor';
 import Visualizer from './Visualizer';
 
+const initialInput = "# Título \n\
+## Subtítulo \n\
+A [Freecodecamp link](https://www.freecodecamp.com) \n\n\
+Inline code `<div></div>` \n\
+```\n\
+// Code block. \n\n\
+const greetings = (name) => {console.log('Hello' + name)};\n\
+greetings('Gabit');\n\
+// OUTPUT ==> Hello Gabit\n\
+```\n\
+List items \n\
+- Item 1\n\
+  - Item 2\n\
+    - Item 3\n\n\
+> Blockquote!\n\n\
+![Image](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/120px-Markdown-mark.svg.png)\n\n\
+**bold text**.";
+
 function App() {
   
-  const [input, setInput] = useState("# titulo");
+  const [input, setInput] = useState(initialInput);
   
   function changeInput(newInput) {
     setInput(newInput);
@@ -29,14 +47,6 @@ function App() {
 
 export default App;
 
-
-// User Story #1: I can see a textarea element with a corresponding id="editor".
-
-// User Story #2: I can see an element with a corresponding id="preview".
-
-// User Story #3: When I enter text into the #editor element, the #preview element is updated as I type to display the content of the textarea.
-
-// User Story #4: When I enter GitHub flavored markdown into the #editor element, the text is rendered as HTML in the #preview element as I type (HINT: You don't need to parse Markdown yourself - you can import the Marked library for this: https://cdnjs.com/libraries/marked).
 
 // User Story #5: When my markdown previewer first loads, the default text in the #editor field should contain valid markdown that represents at least one of each of the following elements: a header (H1 size), a sub header (H2 size), a link, inline code, a code block, a list item, a blockquote, an image, and bolded text.
 

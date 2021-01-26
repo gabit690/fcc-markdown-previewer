@@ -10,7 +10,10 @@ const Editor = (props) => {
     }
 
     return (
-        <textarea id="editor" value={props.input} onChange={handleChange}></textarea>
+        <div>
+            <h2>Editor</h2>
+            <textarea id="editor" value={props.input} onChange={handleChange}></textarea>
+        </div>
     );
 }
 

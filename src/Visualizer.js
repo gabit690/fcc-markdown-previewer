@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 const marked = require('marked');
 
+marked.setOptions({
+  gfm: true,
+  breaks: true
+});
+
 const Visualizer = (props) => {
 
   useEffect(() => {
@@ -8,7 +13,10 @@ const Visualizer = (props) => {
   }, [props.input]);
 
   return (
-    <div id="preview"></div>
+    <div>
+      <h2>Visualizer</h2>
+      <div id="preview"></div>
+    </div>
   );
 };
 

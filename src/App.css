@@ -1,0 +1,25 @@
+.App {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+#main-title {
+  height: 10vh;
+  margin-bottom: 0;
+}
+
+.row {
+  width: 100%;
+  margin: 0;
+}
+
+#author {
+  height: 5vh;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .row {
+    height: 85vh;
+  }
+}

@@ -7,8 +7,8 @@ import './App.css';
 import Editor from './Editor';
 import Visualizer from './Visualizer';
 
-const initialInput = "# Título \n\
-## Subtítulo \n\
+const initialInput = "# Heading \n\
+## Subheading \n\
 A [Freecodecamp link](https://www.freecodecamp.com) \n\n\
 Inline code `<div></div>` \n\
 ```\n\
@@ -33,23 +33,24 @@ function App() {
     setInput(newInput);
   }
 
+  function eraseEditorContent() {
+    setInput("");
+  }
+
   return (
-    <div className="App">
-      <h1>Markdown previewer</h1>
-      <p>By Gabit</p>
-      <div>
-        <Editor input={input} setInput={changeInput} />
-        <Visualizer input={input} />
+    <div className="container-fluid bg-secondary App px-0">
+      <h1 id="main-title" className="d-flex justify-content-center align-items-center">Markdown previewer</h1>
+      <p  id="author" className="text-white d-flex justify-content-center">By Gabit</p>
+      <div className="row">
+        <div className="col-md-6 d-md-flex justify-content-center align-items-center px-5 mb-3 mb-md-0">
+          <Editor input={input} setInput={changeInput} eraseInput={eraseEditorContent} />
+        </div>
+        <div className="col-md-6 d-md-flex justify-content-center align-items-center px-5">
+          <Visualizer input={input} />  
+        </div>
       </div>
     </div>
   );
 }
 
 export default App;
-
-
-// User Story #5: When my markdown previewer first loads, the default text in the #editor field should contain valid markdown that represents at least one of each of the following elements: a header (H1 size), a sub header (H2 size), a link, inline code, a code block, a list item, a blockquote, an image, and bolded text.
-
-// User Story #6: When my markdown previewer first loads, the default markdown in the #editor field should be rendered as HTML in the #preview element.
-
-// Optional Bonus (you do not need to make this test pass): My markdown previewer interprets carriage returns and renders them as br (line break) elements.

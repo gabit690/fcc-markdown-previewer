@@ -1,0 +1,12 @@
+#preview {
+  background-color: white;
+  min-height: 10vh;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  #preview {
+    height: 65vh;
+    overflow: auto;
+  }
+}
